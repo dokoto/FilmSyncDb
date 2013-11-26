@@ -125,8 +125,14 @@ public class DDBB
 				document.append("release_date", film.release_date());
 				document.append("sinopsis", film.sinopsis());
 				ArrayList<BasicDBObject> x = new ArrayList<BasicDBObject>();
+				BasicDBObject item = null;
 				for (int i = 0; i < film.titulos_alternativos().size(); i++)
-					x.add(new BasicDBObject(film.titulos_alternativos().get(i).getKey(), film.titulos_alternativos().get(i).getValue()));
+				{
+					item = new BasicDBObject();
+					item.put("titulo_alt", film.titulos_alternativos().get(i).getValue());
+					item.put("titulo_alt_lang", film.titulos_alternativos().get(i).getKey());
+					x.add(item);
+				}
 				document.append("titulos_alternativos", x);
 				document.append("generos", film.generos().toArray(new String[film.generos().size()]));
 				document.append("directores", film.directores().toArray(new String[film.directores().size()]));
