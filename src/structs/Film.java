@@ -47,7 +47,7 @@ public class Film
 				this.directores.add(jsonArray.get(i).path("name").asText());
 		}
 		
-		jsonArray = credits_info.path("crew");
+		jsonArray = credits_info.path("cast");
 		for(int i = 0; i < jsonArray.size(); i++)		
 			this.actores.add(jsonArray.get(i).path("name").asText());
 		
