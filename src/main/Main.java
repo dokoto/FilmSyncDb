@@ -1,3 +1,9 @@
+/*
+ * El sistema FilmSyncDB y FilmQueryDb funciona con las siguientes dependecias
+ * java version "1.7.0_45"
+ * mongodb 2.4.8
+ */
+
 package main;
 
 import java.util.HashMap;
